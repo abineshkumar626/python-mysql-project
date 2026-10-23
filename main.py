@@ -15,22 +15,25 @@ while True:
             while True:
                 print("--admin menu--")
                 print("1.add user")
-                print("2.view user")
-                print("3.update user")
-                print("4.delete user")
-                print("5.logout")
+                print("2.add admin")
+                print("3.view user")
+                print("4.update user")
+                print("5.delete user")
+                print("6.logout")
                 
                 ch=int(input('enter your choice:'))
                 
                 if ch==1:
                     add_user()
-                if ch==2:
+                elif ch==2:
+                    add_user("admin")
+                elif ch==3:
                     view()
-                if ch==3:
+                elif ch==4:
                     update()
-                if ch==4:
+                elif ch==5:
                     delete()
-                if ch==5:
+                elif ch==6:
                     break
                 else:
                     print('invalid choice')

@@ -2,13 +2,13 @@ from database import *
 from tabulate import *
 
 
-def add_user():
+def add_user(role="user"):
     uname=input("username:")
     password=input("password:")
     name=input("name :")
     email=input("email:")
-    q="insert into users (username,password,name,email,role)values('{}','{}','{}','{}','user');".format(uname,password,name,email)
-    cur.execute(q)
+    q = "insert into users (username,password,name,email,role) values (%s,%s,%s,%s,%s)"
+    cur.execute(q, (uname, password, name, email, role))
     con.commit()
     print('user added successfully')
     
